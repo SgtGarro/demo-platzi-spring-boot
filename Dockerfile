@@ -1,5 +1,5 @@
 FROM maven:3.9-eclipse-temurin-22-jammy AS build
-COPY ..
+COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:22-rc-jdk-oracle
