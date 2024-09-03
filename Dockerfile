@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:22-rc-jdk-oracle
-COPY --from=build /target/demo-platzi-1.0.0.jar build.jar
+COPY --from=build /target/demo-platzi-1.0.0.jar demo.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "\"-Dspring.profiles.active=prod\"" "build.jar"]
+ENTRYPOINT ["java", "-jar", "demo.jar"]
